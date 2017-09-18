@@ -1,6 +1,6 @@
 # Rest API frontend with React
 
-Starting this project by using create-react-app, it's because i just need less css config. Lot of configuration here inspired by Rem on his youtube channel https://www.youtube.com/user/MrRemchi
+First of all, i was starting this project by using create-react-app. It's because, i just need less css config. This project inspired by Rem on his youtube channel https://www.youtube.com/user/MrRemchi
 
 technology used on this project
 - React
