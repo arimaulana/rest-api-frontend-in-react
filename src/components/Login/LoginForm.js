@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const styleForm = {
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center'
+  alignItems: 'center',
 };
 
 class LoginForm extends Component {
@@ -16,7 +16,7 @@ class LoginForm extends Component {
       username: '',
       password: '',
       errors: {},
-      isLoading: false
+      isLoading: false,
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -26,21 +26,20 @@ class LoginForm extends Component {
   onSubmit(e) {
     e.preventDefault();
     this.setState({ errors: {}, isLoading: true });
-    this.props
-      .login(this.state)
-      .then(() => {
-        this.props.history.push('/');
-      })
-      .catch(err => {
-        console.log(err);
-        if (err.response) {
-          console.log(err.response);
-        } else if (err.request) {
-          console.log(err.request);
-        } else {
-          console.log(err.message);
-        }
-      });
+    this.props.login(this.state).then(() => {
+      this.props.history.push('/');
+    });
+
+    // .catch(err => {
+    //   console.log(err);
+    //   if (err.response) {
+    //     console.log(err.response);
+    //   } else if (err.request) {
+    //     console.log(err.request);
+    //   } else {
+    //     console.log(err.message);
+    //   }
+    // });
   }
 
   onChange(e) {
@@ -86,7 +85,7 @@ class LoginForm extends Component {
 
 LoginForm.propTypes = {
   login: PropTypes.func.isRequired,
-  history: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 export default LoginForm;

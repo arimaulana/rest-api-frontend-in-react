@@ -123,7 +123,7 @@ class SignupForm extends Component {
 SignupForm.propTypes = {
   userSignupRequest: PropTypes.func.isRequired,
   addFlashMessage: PropTypes.func.isRequired,
-  history: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
 };
 
 export default SignupForm;

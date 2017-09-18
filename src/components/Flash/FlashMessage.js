@@ -18,7 +18,7 @@ class FlashMessage extends React.Component {
       <div
         className={classnames('alert', {
           'alert-success': type === 'success',
-          'alert-danger': type === 'error'
+          'alert-danger': type === 'error',
         })}
       >
         <button onClick={this.onClick} className="close">
@@ -31,8 +31,8 @@ class FlashMessage extends React.Component {
 }
 
 FlashMessage.propTypes = {
-  message: PropTypes.object.isRequired,
-  deleteFlashMessage: PropTypes.func.isRequired
+  message: PropTypes.object.isRequired, // eslint-disable-line
+  deleteFlashMessage: PropTypes.func.isRequired,
 };
 
 export default FlashMessage;

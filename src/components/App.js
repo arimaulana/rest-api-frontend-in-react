@@ -11,61 +11,54 @@ import LoginPage from './Login/LoginPage';
 
 const history = createBrowserHistory();
 
-class Home extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Home</h1>
-      </div>
-    );
-  }
-}
+const Home = () => (
+  <div>
+    <h1>Home</h1>
+  </div>
+);
 
-class App extends React.Component {
-  render() {
-    const { isAuthenticated } = this.props.auth;
-    return (
-      <Router history={history}>
-        <div className="App">
-          <Navbar history={history} />
-          <FlashMessagesList />
-          <Route
-            exact
-            path="/"
-            render={() =>
-              isAuthenticated ? <Home /> : <Redirect to="/login" />}
-          />
-          <Route
-            path="/signup"
-            render={() =>
-              isAuthenticated ? (
-                <Redirect to="/" />
-              ) : (
-                <SignupPage history={history} />
-              )}
-          />
-          <Route
-            path="/login"
-            render={() =>
-              isAuthenticated ? (
-                <Redirect to="/" />
-              ) : (
-                <LoginPage history={history} />
-              )}
-          />
-        </div>
-      </Router>
-    );
-  }
-}
+const App = props => {
+  const { isAuthenticated } = props.auth;
+  return (
+    <Router history={history}>
+      <div className="App">
+        <Navbar history={history} />
+        <FlashMessagesList />
+        <Route
+          exact
+          path="/"
+          render={() => (isAuthenticated ? <Home /> : <Redirect to="/login" />)}
+        />
+        <Route
+          path="/signup"
+          render={() =>
+            isAuthenticated ? (
+              <Redirect to="/" />
+            ) : (
+              <SignupPage history={history} />
+            )}
+        />
+        <Route
+          path="/login"
+          render={() =>
+            isAuthenticated ? (
+              <Redirect to="/" />
+            ) : (
+              <LoginPage history={history} />
+            )}
+        />
+      </div>
+    </Router>
+  );
+};
 
 App.propTypes = {
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired, // eslint-disable-line
 };
 
 function mapStateToProps(state) {
   return {
-    auth: state.auth
+    auth: state.auth,
   };
 }
 

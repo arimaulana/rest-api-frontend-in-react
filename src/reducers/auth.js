@@ -1,5 +1,5 @@
-import { SET_CURRENT_USER } from '../actions/actionTypes';
 import isEmpty from 'lodash/isEmpty';
+import { SET_CURRENT_USER } from '../actions/actionTypes';
 
 const initialState = {
   isAuthenticated: false,

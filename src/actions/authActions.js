@@ -1,12 +1,12 @@
 import axios from 'axios';
+import jwtDecode from 'jwt-decode';
 import { SET_CURRENT_USER } from './actionTypes';
 import setAuthorizationToken from '../utils/setAuthorizationToken';
-import jwtDecode from 'jwt-decode';
 
 export function setCurrentUser(user) {
   return {
     type: SET_CURRENT_USER,
-    user
+    user,
   };
 }
 
@@ -18,7 +18,7 @@ export function login(data) {
         method: 'post',
         baseURL: 'http://localhost:3000/api/v1/',
         data,
-        timeout: 2000
+        timeout: 2000,
       })
       .then(res => {
         const token = res.data.token;

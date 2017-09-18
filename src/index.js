@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import jwtDecode from 'jwt-decode';
 
 import setAuthorizationToken from './utils/setAuthorizationToken';
-import jwtDecode from 'jwt-decode';
 import { setCurrentUser } from './actions/authActions';
 
 import App from './components/App';
