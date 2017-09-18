@@ -1,0 +1,27 @@
+{
+  "name": "newjs",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.16.2",
+    "classnames": "^2.2.5",
+    "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.4",
+    "material-ui": "^0.19.1",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.13",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "shortid": "^2.2.8"
+  },
+  "scripts": {
+    "start": "set PORT=80 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
