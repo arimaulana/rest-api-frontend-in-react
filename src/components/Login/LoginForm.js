@@ -26,9 +26,12 @@ class LoginForm extends Component {
   onSubmit(e) {
     e.preventDefault();
     this.setState({ errors: {}, isLoading: true });
-    this.props.login(this.state).then(() => {
-      this.props.history.push('/');
-    });
+    this.props.login(this.state).then(
+      () => {
+        this.props.history.push('/');
+      },
+      err => this.setState({ errors: err.response.data, isLoading: false }),
+    );
 
     // .catch(err => {
     //   console.log(err);

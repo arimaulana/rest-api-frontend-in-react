@@ -4,10 +4,11 @@ import { createBrowserHistory } from 'history';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Navbar from './Navbar/Navbar';
-import FlashMessagesList from './Flash/FlashMessagesList';
-import SignupPage from './SignupPage/SignupPage';
-import LoginPage from './Login/LoginPage';
+import Header from './Header';
+import HeaderMenu from './HeaderMenu';
+import FlashMessagesList from './Flash';
+import SignupPage from './SignupPage';
+import LoginPage from './Login';
 
 const history = createBrowserHistory();
 
@@ -22,7 +23,8 @@ const App = props => {
   return (
     <Router history={history}>
       <div className="App">
-        <Navbar history={history} />
+        <Header history={history} />
+        <HeaderMenu history={history}/>
         <FlashMessagesList />
         <Route
           exact

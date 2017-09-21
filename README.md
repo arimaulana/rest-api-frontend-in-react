@@ -10,8 +10,8 @@ technology used on this project
 - Material-UI
 
 Todo list
-
 - catch rejection on Login and Signup
+- handle refreshToken
 - adding user info to redux store
 - adding Home Feed to each user
 - adding user feed
